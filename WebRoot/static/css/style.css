@@ -1,0 +1,186 @@
+.top{
+    height: 50px;
+    width: 100%;
+    line-height: 50px;
+    font-size: 15px;
+    position:absolute;
+    top: 0px;
+    z-index: 999;
+    background-color: rgba(22, 21, 21, 0.849);
+}
+.top65{    position: relative;
+    top: 65px;
+}
+.top15{    position: relative;
+    top: 15px;
+}
+.bg{
+    background-color:white;
+    border-radius:15px;
+}
+.search{
+    border-radius:9px;
+    cursor: pointer;
+    
+}
+.imgborder-radius15{
+    border-radius:15px;
+}
+.searchbg{
+    background-color: rgb(24, 23, 23);
+color: white;
+}
+body{
+    background-color: rgba(219, 216, 216, 0.849);
+}
+.top32{
+    position: relative;
+    top: 32px;
+}
+.fontWhite{
+color: white;
+}
+.titleA:hover{
+    color: white;  
+    text-decoration: none;
+}
+.titleA:link{
+    color: white;  
+    text-decoration: none;
+}
+.titleA:visited {
+       color: white;  
+    text-decoration: none;
+   }
+.titleA:active {
+    color: white;  
+    text-decoration: none;
+   }
+.height100{
+    height: 100px;
+}
+.theRight{
+    position: relative;
+    top: 15px;
+    height : 700px;
+}
+.down{
+position: relative;
+top: 85px;
+width: 100%;
+line-height: 50px;
+background-color: rgba(22, 21, 21, 0.849);
+}
+.down p{
+    width: 130px;
+}
+h4{
+    width: auto;
+}
+
+#menu{
+display: none;
+z-index: 999;
+position:absolute;
+top:50px;
+line-height: 30px;
+width: 100%;
+height: 380px;
+background-color: rgba(7, 7, 7, 0.952);
+}
+#menu p{
+    position: relative;
+   top: 5px;
+
+}
+.indent{
+    text-indent: 30px;
+}
+.indent15{
+    text-indent: 15px;
+}
+
+.menuHr{
+   border-top: 1px solid rgb(104, 103, 103);
+   width: 95%;
+}
+
+
+#menuButton{
+
+}
+.img{
+    overflow: hidden; 
+    width: 100%;
+    height: 50%;
+
+}
+.hrEvaluate{
+    border-top: rgba(22, 21, 21, 0.849) solid 1px;
+    /*评论区div(分割线)*/
+width: 100%;
+height: 15px;
+}
+.downheight10px{
+/*让div是内容高10px*/
+border-bottom: 10px solid white ; 
+
+}
+/*评论区的连接*/
+.colorRed:hover{
+    color: red;  
+    text-decoration: none;
+}
+.colorRed:link{
+    color: red;  
+    text-decoration: none;
+}
+.colorRed:visited {
+       color: red;  
+    text-decoration: none;
+   }
+  .colorRed:active {
+    color: red;  
+    text-decoration: none;
+   }
+   /*评论区的评论内容*/
+   .pEvaluatedown{
+    position: relative;
+    top: -7px;
+   }
+   .bordersolid{
+     border-bottom: #dadada 1px solid;
+   }
+   
+   .divbody img{
+     width: 80%; 
+       
+   }
+
+  #menu p{
+      width: 100%;
+      color: white;
+  }
+
+#SendarticlesMS{
+    cursor: pointer;
+}
+.zimg{
+    border-radius:15px;
+    height: 145px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zimg div{
+    width: 100%;
+    height: 100%;
+    border-radius:15px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.zimg img{
+     width: 100%;
+    border-radius:15px;
+ }
