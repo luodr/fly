@@ -1,4 +1,4 @@
-﻿package com.ldr.util;
+package com.ldr.util;
 
 import java.io.File;
 import java.io.FileInputStream;

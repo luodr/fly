@@ -1,4 +1,4 @@
-﻿package com.ldr.util;
+package com.ldr.util;
 
 
 import org.apache.commons.fileupload.ProgressListener;

@@ -1,4 +1,4 @@
-﻿package com.ldr.servlet;
+package com.ldr.servlet;
 
 import java.io.IOException;
 import java.util.Date;

@@ -10,5 +10,8 @@
 
 
 
-PlayServelt.java 需要修改你的支付接口  appid
-PhoneVerifyServet.java 需要修改你的短信 accessKeyId accessKeySecret
+# PlayServelt.java 需要修改你的支付接口  appid
+# PhoneVerifyServet.java 需要修改你的短信 accessKeyId accessKeySecret
+# src\com\ldr\util\ConnectManager.java 数据链接
+# DB 数据库文件
+

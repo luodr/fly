@@ -1,4 +1,4 @@
-﻿package com.ldr.dao;
+package com.ldr.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
