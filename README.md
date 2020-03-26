@@ -8,3 +8,7 @@
 模板是在layUi官网下载的  https://fly.layui.com/store/FlyTemplate/
 
 
+
+
+PlayServelt.java 需要修改你的支付接口  appid
+PhoneVerifyServet.java 需要修改你的短信 accessKeyId accessKeySecret

@@ -45,8 +45,15 @@ public class LoginServet extends HttpServlet {
 			//登录成功!
 			HttpSession session=req.getSession();
 			session.setAttribute("user", user);
-		}else{//登录失败!
+			if(user.getType()==1){ //管理员登录  先跳到后台首页
+				resp.sendRedirect(req.getContextPath()+"/adminIndex");
+			}else{
 			
+				resp.sendRedirect(req.getContextPath()+"/index");
+			}
+		
+		}else{//登录失败!
+			req.getRequestDispatcher("/static/login.jsp").forward(req, resp);
 		}
 
 	}

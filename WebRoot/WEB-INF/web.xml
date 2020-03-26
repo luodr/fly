@@ -6,12 +6,13 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name></display-name>	
   <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index</welcome-file>
   </welcome-file-list>
   
   
       <servlet>
    <servlet-name>publish</servlet-name>
+   
     <servlet-class>com.ldr.servlet.PublishServet</servlet-class>
      
   </servlet>
@@ -48,11 +49,292 @@
     <servlet-class>com.ldr.servlet.ArticleServlet</servlet-class>
      
   </servlet>
+     <servlet>
+   <servlet-name>index</servlet-name>
+    <servlet-class>com.ldr.servlet.IndexServlet</servlet-class>
+     
+  </servlet>
   <servlet-mapping>
     <servlet-name>Article</servlet-name>
     <url-pattern>/article</url-pattern>
      </servlet-mapping>
      
-   
+          <servlet>
+   <servlet-name>items</servlet-name>
+    <servlet-class>com.ldr.servlet.ItemsServlet</servlet-class>
+     
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>items</servlet-name>
+    <url-pattern>/items</url-pattern>
+     </servlet-mapping>
 
+
+  <servlet-mapping>
+    <servlet-name>index</servlet-name>
+    <url-pattern>/index</url-pattern>
+     </servlet-mapping>
+
+        <servlet>
+   <servlet-name>manager</servlet-name>
+    <servlet-class>com.ldr.servlet.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>manager</servlet-name>
+    <url-pattern>/manager</url-pattern>
+     </servlet-mapping>
+
+  <servlet>
+   <servlet-name>userIndex</servlet-name>
+    <servlet-class>com.ldr.servlet.UserIndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>userIndex</servlet-name>
+    <url-pattern>/userIndex</url-pattern>
+     </servlet-mapping>
+
+       <servlet>
+   <servlet-name>delete</servlet-name>
+    <servlet-class>com.ldr.servlet.DeleteServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete</servlet-name>
+    <url-pattern>/delete</url-pattern>
+     </servlet-mapping>
+
+
+
+
+
+   <servlet>
+   <servlet-name>add</servlet-name>
+    <servlet-class>com.ldr.servlet.AddArticleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>add</servlet-name>
+    <url-pattern>/add</url-pattern>
+     </servlet-mapping>
+ 
+  <servlet>
+   <servlet-name>SetServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.SetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetServlet</servlet-name>
+    <url-pattern>/set</url-pattern>
+     </servlet-mapping>
+  
+  <servlet>
+   <servlet-name>DetailServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.DetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DetailServlet</servlet-name>
+    <url-pattern>/detail</url-pattern>
+     </servlet-mapping>
+
+  <servlet>
+   <servlet-name>MessageServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.MessageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MessageServlet</servlet-name>
+    <url-pattern>/message</url-pattern>
+     </servlet-mapping>
+
+  <servlet>
+   <servlet-name>HomeServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>HomeServlet</servlet-name>
+    <url-pattern>/home</url-pattern>
+     </servlet-mapping>
+
+
+
+ <servlet>
+   <servlet-name>SetInfoServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.SetInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetInfoServlet</servlet-name>
+    <url-pattern>/setInfo</url-pattern>
+     </servlet-mapping>
+
+
+
+ <servlet>
+   <servlet-name>LoginOutServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.LoginOutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginOutServlet</servlet-name>
+    <url-pattern>/loginOut</url-pattern>
+     </servlet-mapping>
+
+
+
+
+ <servlet>
+   <servlet-name>search</servlet-name>
+    <servlet-class>com.ldr.servlet.SearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>search</servlet-name>
+    <url-pattern>/search</url-pattern>
+     </servlet-mapping>
+
+
+
+ <servlet>
+   <servlet-name>ReplyServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.ReplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReplyServlet</servlet-name>
+    <url-pattern>/reply</url-pattern>
+     </servlet-mapping>
+
+
+ <servlet>
+   <servlet-name>AdminIndexServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.AdminIndexServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminIndexServlet</servlet-name>
+    <url-pattern>/adminIndex</url-pattern>
+     </servlet-mapping>
+
+<servlet>
+   <servlet-name>AdminTypeServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.AdminTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminTypeServlet</servlet-name>
+    <url-pattern>/AdminType</url-pattern>
+     </servlet-mapping>
+
+<servlet>
+   <servlet-name>GoodReplyServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.GoodReplyServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoodReplyServlet</servlet-name>
+    <url-pattern>/goodReply</url-pattern>
+     </servlet-mapping>
+
+
+<servlet>
+   <servlet-name>ReportServet</servlet-name>
+    <servlet-class>com.ldr.servlet.ReportServet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportServet</servlet-name>
+    <url-pattern>/report</url-pattern>
+     </servlet-mapping>
+
+
+<servlet>
+   <servlet-name>AdminReportServet</servlet-name>
+    <servlet-class>com.ldr.servlet.AdminReportServet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminReportServet</servlet-name>
+    <url-pattern>/adminreport</url-pattern>
+     </servlet-mapping>
+
+<servlet>
+   <servlet-name>ReportItemsServet</servlet-name>
+    <servlet-class>com.ldr.servlet.ReportItemsServet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReportItemsServet</servlet-name>
+    <url-pattern>/reportItems</url-pattern>
+     </servlet-mapping>
+
+<servlet>
+   <servlet-name>ImgUpLoadServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.ImgUpLoadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ImgUpLoadServlet</servlet-name>
+    <url-pattern>/upload</url-pattern>
+     </servlet-mapping>
+
+
+
+
+<servlet>
+   <servlet-name>AdminSearchServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.AdminSearchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminSearchServlet</servlet-name>
+    <url-pattern>/adminSearch</url-pattern>
+     </servlet-mapping>
+     
+     
+     <servlet>
+   <servlet-name>PhoneVerifyServet</servlet-name>
+    <servlet-class>com.ldr.servlet.PhoneVerifyServet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PhoneVerifyServet</servlet-name>
+    <url-pattern>/PhoneVerify</url-pattern>
+     </servlet-mapping>
+     
+     
+        <servlet>
+   <servlet-name>PhoneRegisterServet</servlet-name>
+    <servlet-class>com.ldr.servlet.PhoneRegisterServet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PhoneRegisterServet</servlet-name>
+    <url-pattern>/PhoneRegister</url-pattern>
+     </servlet-mapping>
+     
+     
+        <servlet>
+   <servlet-name>AuditServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.AuditServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuditServlet</servlet-name>
+    <url-pattern>/audit</url-pattern>
+     </servlet-mapping>
+     
+     
+     
+        <servlet>
+   <servlet-name>DeleteCommentServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.DeleteCommentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCommentServlet</servlet-name>
+    <url-pattern>/deletecomment</url-pattern>
+     </servlet-mapping>
+     
+     
+     
+             <servlet>
+   <servlet-name>MailServlet</servlet-name>
+    <servlet-class>com.ldr.servlet.MailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MailServlet</servlet-name>
+    <url-pattern>/mail</url-pattern>
+     </servlet-mapping>
+     
+     
+      <servlet>
+   <servlet-name>PlayServelt</servlet-name>
+    <servlet-class>com.ldr.servlet.PlayServelt</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PlayServelt</servlet-name>
+    <url-pattern>/play</url-pattern>
+     </servlet-mapping>
+     
+     
 </web-app>

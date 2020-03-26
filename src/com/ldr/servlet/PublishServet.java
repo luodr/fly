@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -123,7 +124,7 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
            article.setType(type);
            article.setCoverimage(imgFile1);
            article.setIntroduction(introduction);
-           article.setCreationDate(new java.sql.Date(new Date().getTime()));
+           article.setCreationDate(new Timestamp(new java.util.Date().getTime()));
            ArticleDao.getInstance().insertArticle(article);
            resp.getWriter().write(content1);
        	   }

@@ -1,6 +1,7 @@
 package com.ldr.bean;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class Article {
 	private int id;
@@ -15,7 +16,7 @@ public class Article {
 	//觉得垃圾
 	private int rubbis;
 	//创建时间
-	private Date creationDate;
+	private Timestamp creationDate;
    //简介
 	private String Introduction;
 	//封面图
@@ -28,9 +29,41 @@ public class Article {
 	private String type;
 	//举报数
 	private int report;
+	//回复数
+	private int reply;
+	//子类型
+	private String type2; 
+	private String L_version;
+	//图片
+	private String img;
+	//审核状态
+	private int audit;
 	
 	
-	
+	public String getImg() {
+		return img;
+	}
+	public void setImg(String img) {
+		this.img = img;
+	}
+	public String getL_version() {
+		return L_version;
+	}
+	public void setL_version(String l_version) {
+		L_version = l_version;
+	}
+	public String getType2() {
+		return type2;
+	}
+	public void setType2(String type2) {
+		this.type2 = type2;
+	}
+	public int getReply() {
+		return reply;
+	}
+	public void setReply(int reply) {
+		this.reply = reply;
+	}
 	
 	public String getName() {
 		return name;
@@ -74,13 +107,14 @@ public class Article {
 	public void setRubbis(int rubbis) {
 		this.rubbis = rubbis;
 	}
-	public Date getCreationDate() {
+
+
+	public Timestamp getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(Timestamp creationDate) {
 		this.creationDate = creationDate;
 	}
-
 	public String getIntroduction() {
 		return Introduction;
 	}
@@ -110,6 +144,12 @@ public class Article {
 	}
 	public void setReport(int report) {
 		this.report = report;
+	}
+	public int getAudit() {
+		return audit;
+	}
+	public void setAudit(int audit) {
+		this.audit = audit;
 	}
 
 }
