@@ -1,4 +1,4 @@
-package com.ldr.util;
+ï»¿package com.ldr.util;
 
 
 import org.apache.commons.fileupload.ProgressListener;
@@ -6,9 +6,9 @@ import org.apache.commons.fileupload.ProgressListener;
 public class ListenerUploadProgress implements ProgressListener {
     
     /**
-     * @param bytesRead ÒÑ¾­¶ÁÈ¡µÄ×Ö½ÚÊı
-     * @param contentLength ÎÄ¼ş×Ü³¤¶È
-     * @param items µ±Ç°ÉÏ´«µÄÊÇÄÄ¸öÎÄ¼ş
+     * @param bytesRead å·²ç»è¯»å–çš„å­—èŠ‚æ•°
+     * @param contentLength æ–‡ä»¶æ€»é•¿åº¦
+     * @param items å½“å‰ä¸Šä¼ çš„æ˜¯å“ªä¸ªæ–‡ä»¶
      */
     public void update(long bytesRead, long contentLength, int items) {
         System.out.println(bytesRead);

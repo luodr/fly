@@ -1,4 +1,4 @@
-
+﻿
 
 package com.ldr.servlet;
 
@@ -54,14 +54,14 @@ public class SetInfoServlet extends HttpServlet {
 		     System.out.println(UserDao.getInstance().verifyName(name));
 			if(!user.getName().equals(name)&&!UserDao.getInstance().verifyName(name)){
 				
-				obj.put("msg", "�ǳ��Ѵ��ڣ��뻻һ��!");
+				obj.put("msg", "昵称已存在，请换一个!");
 			}
 			else{
 				user.setName( name);
 				UserDao.getInstance().updateUserInfo(user);
 				
 				obj.put("code", 0);
-				obj.put("msg", "�޸ĳɹ�!");
+				obj.put("msg", "修改成功!");
 			}
 					try {
 						resp.getWriter().println(obj.toJSONString());

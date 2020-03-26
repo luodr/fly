@@ -1,42 +1,42 @@
-package com.ldr.bean;
+ï»¿package com.ldr.bean;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Article {
 	private int id;
-	//ÎÄÕÂ±êÌâ
+	//æ–‡ç« æ ‡é¢˜
 	private String title;
-	//ÎÄÕÂÄÚÈİ
+	//æ–‡ç« å†…å®¹
 	private String content;
-	//ä¯ÀÀÊı
+	//æµè§ˆæ•°
 	private int views;
-	//µãÔŞÊı
+	//ç‚¹èµæ•°
 	private int goods;
-	//¾õµÃÀ¬»ø
+	//è§‰å¾—åƒåœ¾
 	private int rubbis;
-	//´´½¨Ê±¼ä
+	//åˆ›å»ºæ—¶é—´
 	private Timestamp creationDate;
-   //¼ò½é
+   //ç®€ä»‹
 	private String Introduction;
-	//·âÃæÍ¼
+	//å°é¢å›¾
 	private String coverimage;
-	//×÷Õß
+	//ä½œè€…
 	private String userName;
-	//×÷ÕßÃû³Æ
+	//ä½œè€…åç§°
 	private String name;
-	//ÎÄ¼şÀàĞÍ
+	//æ–‡ä»¶ç±»å‹
 	private String type;
-	//¾Ù±¨Êı
+	//ä¸¾æŠ¥æ•°
 	private int report;
-	//»Ø¸´Êı
+	//å›å¤æ•°
 	private int reply;
-	//×ÓÀàĞÍ
+	//å­ç±»å‹
 	private String type2; 
 	private String L_version;
-	//Í¼Æ¬
+	//å›¾ç‰‡
 	private String img;
-	//ÉóºË×´Ì¬
+	//å®¡æ ¸çŠ¶æ€
 	private int audit;
 	
 	

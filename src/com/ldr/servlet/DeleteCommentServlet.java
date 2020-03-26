@@ -1,4 +1,4 @@
-
+﻿
 
 package com.ldr.servlet;
 
@@ -53,11 +53,11 @@ public class DeleteCommentServlet extends HttpServlet {
 				  
 					 ArticleDao.getInstance().reduceReply(Integer.parseInt(articleId));
 				    obj.put("code", 0);
-				    obj.put("msg", "ɾ���ɹ�");
+				    obj.put("msg", "É¾³ý³É¹¦");
 				    
 			   }else{
 				   obj.put("code",1);
-				    obj.put("msg", "ɾ��ʧ��");
+				    obj.put("msg", "É¾³ýÊ§°Ü");
 			   }
 		  
 		    try {

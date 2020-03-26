@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -36,7 +36,7 @@ public class HomeServlet extends HttpServlet {
 	HttpSession session=req.getSession();
 	User user=(User)session.getAttribute("user");
 
-	if(name!=null&&((name=new String(name.getBytes(CharacterCodingUtil.getEncoding(name)),"UTF-8"))!=null)&&(user==null||!name.equals(user.getName()))){ //²éÑ¯±ğÈËµÄÖ÷Ò³
+	if(name!=null&&((name=new String(name.getBytes(CharacterCodingUtil.getEncoding(name)),"UTF-8"))!=null)&&(user==null||!name.equals(user.getName()))){ //æŸ¥è¯¢åˆ«äººçš„ä¸»é¡µ
 		
 	
 		User your_user=(User)UserDao.getInstance().findByName(name);
@@ -49,7 +49,7 @@ public class HomeServlet extends HttpServlet {
            req.setAttribute("userComments", userComments);
 		   req.getRequestDispatcher("./static/user/home.jsp").forward(req, resp);
 	   }
-	}else{//²éÑ¯×Ô¼ºµÄÖ÷Ò³
+	}else{//æŸ¥è¯¢è‡ªå·±çš„ä¸»é¡µ
 			if(user!=null){
 	           ArrayList<Article>  list=ArticleDao.getInstance().findByUser(user.getUser());
 	           req.setAttribute("list", list);
@@ -58,7 +58,7 @@ public class HomeServlet extends HttpServlet {
 	           req.setAttribute("userComments", userComments);
 	           //req.setAttribute("user", user.getUser());
 				req.getRequestDispatcher("./static/user/home.jsp").forward(req, resp);
-			}else{  //²»ÊÇ²éÑ¯±ğÈËÓÖÃ»µÇÂ½µÄ -- È¥µÇÂ¼
+			}else{  //ä¸æ˜¯æŸ¥è¯¢åˆ«äººåˆæ²¡ç™»é™†çš„ -- å»ç™»å½•
 				 resp.sendRedirect(req.getContextPath()+"/login");
 			}
 		

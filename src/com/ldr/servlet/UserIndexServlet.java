@@ -1,4 +1,4 @@
-
+﻿
 
 package com.ldr.servlet;
 
@@ -35,12 +35,12 @@ public class UserIndexServlet extends HttpServlet {
 	         
 		HttpSession session=req.getSession();
 		User user=(User)session.getAttribute("user");
-		 if(user!=null){//�Ѿ���¼
+		 if(user!=null){//ÒÑ¾­µÇÂ¼
 			 System.out.println("xxxxxx"+user.getUser());
               List myArticles=ArticleDao.getInstance().findByUser(user.getUser());
               req.setAttribute("list", myArticles);
 	    	 req.getRequestDispatcher("./static/user/index.jsp").forward(req, resp);
-		 }else{ //û��¼
+		 }else{ //Ã»µÇÂ¼
 			 resp.sendRedirect(req.getContextPath()+"/login");
 		 }
 	}

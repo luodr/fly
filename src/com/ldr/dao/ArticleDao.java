@@ -1,4 +1,4 @@
-package com.ldr.dao;
+ï»¿package com.ldr.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,8 +28,8 @@ public class ArticleDao {
 	    
 
 	/**
-	 * ¹Ø±ÕÁ¬½Ó
-	 * @param con ĞèÒª¹Ø±ÕµÄÁ¬½Ó
+	 * å…³é—­è¿æ¥
+	 * @param con éœ€è¦å…³é—­çš„è¿æ¥
 	 */
 	public void closeConnection(Connection con){
 		try {
@@ -42,9 +42,9 @@ public class ArticleDao {
 		}
 	}
 	/**
-	 *  ²åÈëÎÄÕÂ
-	 * @param article ĞèÒª²åÈëÊı¾İ¿âµÄÎÄÕÂ
-	 * @return ²åÈëÊı¾İ¿â½á¹û
+	 *  æ’å…¥æ–‡ç« 
+	 * @param article éœ€è¦æ’å…¥æ•°æ®åº“çš„æ–‡ç« 
+	 * @return æ’å…¥æ•°æ®åº“ç»“æœ
 	 */
 	public  int insertArticle(Article article){
 		Connection con=ConnectManager.getConnection();
@@ -69,7 +69,7 @@ public class ArticleDao {
 			pst.setString(14, article.getL_version());
 			
 		  if(	pst.executeUpdate()>0){
-			  //ÔÚ¹Ø±ÕÁ¬½ÓÇ°»ñÈ¡¸Õ²åÈëµÄID
+			  //åœ¨å…³é—­è¿æ¥å‰è·å–åˆšæ’å…¥çš„ID
 			  String sql_ID="SELECT LAST_INSERT_ID();";
 			  re=  pst.executeQuery(sql_ID);
 			  if(re.next()){
@@ -85,9 +85,9 @@ public class ArticleDao {
 		return 0;
     }    
 	   /**
-	   * ²éÑ¯ÎÄÕÂ
-	   * @param itemID ÎÄÕÂid
-	   * @return  ÎÄÕÂËùÓĞĞÅÏ¢
+	   * æŸ¥è¯¢æ–‡ç« 
+	   * @param itemID æ–‡ç« id
+	   * @return  æ–‡ç« æ‰€æœ‰ä¿¡æ¯
 	   */
 		 public Article findByID(int itemID){
 			 Connection con = null;
@@ -125,7 +125,7 @@ public class ArticleDao {
 			 return null;
 		 }
 		 /**
-		  *  Ìí¼Óä¯ÀÀÁ¿
+		  *  æ·»åŠ æµè§ˆé‡
 		  * @param itemID
 		  */
 	public void addView(int itemID){
@@ -137,7 +137,7 @@ public class ArticleDao {
 				 con=ConnectManager.getConnection();
 				pst = con.prepareStatement(sql);
 				pst.setInt(1, itemID);
-				System.out.println("Ìí¼Ó·ÃÎÊÁ¿"+pst.toString());
+				System.out.println("æ·»åŠ è®¿é—®é‡"+pst.toString());
 				
 				pst.executeUpdate();
 			} catch (SQLException e) {
@@ -149,7 +149,7 @@ public class ArticleDao {
 		
 	}
 	/**
-	 *  Ìí¼ÓÆÀÂÛÁ¿
+	 *  æ·»åŠ è¯„è®ºé‡
 	 * @param itemID
 	 */
 	public void addReply(int itemID){
@@ -171,7 +171,7 @@ public class ArticleDao {
 		
 	}
 	/**
-	 *  ¼õÉÙÆÀÂÛÁ¿
+	 *  å‡å°‘è¯„è®ºé‡
 	 * @param itemID
 	 */
 	public void reduceReply(int itemID){
@@ -193,7 +193,7 @@ public class ArticleDao {
 		
 	}
 	/**
-	 *  ¾Ù±¨
+	 *  ä¸¾æŠ¥
 	 * @param itemID
 	 */
 	public void addReport(int itemID){
@@ -216,9 +216,9 @@ public class ArticleDao {
 	}
 	
 	/**
-	 * Ä£ºıËÑË÷
+	 * æ¨¡ç³Šæœç´¢
 	 * @param key
-	 * @param hot   ÈÈ¶ÈÅÅĞò
+	 * @param hot   çƒ­åº¦æ’åº
 	 * @return
 	 */
 	public ArrayList<Article> searchArticle(String key,boolean noHot){
@@ -265,7 +265,7 @@ public class ArticleDao {
 	}
 	//SELECT * FROM article ORDER BY  views DESC limit 10;
 	/**
-	 * µã»÷ÂÊ×î¸ßµÄÎÄÕÂ
+	 * ç‚¹å‡»ç‡æœ€é«˜çš„æ–‡ç« 
 	 * @param num
 	 * @param offset
 	 * @return
@@ -308,7 +308,7 @@ public class ArticleDao {
 	}
 	
 	/**
-	 * ÆÀÂÛÂÊ×î¸ßµÄÎÄÕÂ
+	 * è¯„è®ºç‡æœ€é«˜çš„æ–‡ç« 
 	 * @param num
 	 * @param offset
 	 * @return
@@ -350,8 +350,8 @@ public class ArticleDao {
 		return arrayList;
 	}
 	 /**
-	  * É¾³ıÎÄÕÂ
-	  * @param id ĞèÒªÉ¾³ıµÄÎÄÕÂid
+	  * åˆ é™¤æ–‡ç« 
+	  * @param id éœ€è¦åˆ é™¤çš„æ–‡ç« id
 	  */
 	public void deleteArticle(int id){
 		
@@ -373,7 +373,7 @@ public class ArticleDao {
 		}
 	}
 	/**
-	 * ÎÄÕÂ±à¼­
+	 * æ–‡ç« ç¼–è¾‘
 	 * @param article 
 	 * @return
 	 */
@@ -470,7 +470,7 @@ public class ArticleDao {
 	 
 	 
 	  /**
-	   *  ²éÑ¯×îĞÂµÄÎÄÕÂ
+	   *  æŸ¥è¯¢æœ€æ–°çš„æ–‡ç« 
 	   * @param num
 	   * @param offset
 	   * @return
@@ -511,8 +511,8 @@ public class ArticleDao {
 	 }
 	 
 	 /**
-	  * ²éÑ¯Ä³¸öÓÃ»§µÄÎÄÕÂ
-	  * @param userName ÓÃ»§Î¨Ò»Æ¾Ö¤
+	  * æŸ¥è¯¢æŸä¸ªç”¨æˆ·çš„æ–‡ç« 
+	  * @param userName ç”¨æˆ·å”¯ä¸€å‡­è¯
 	  * @return Articles
 	  */
 	 public ArrayList<Article> findByUser(String userName){
@@ -552,8 +552,8 @@ public class ArticleDao {
 	 
 	 
 	 /**
-	  * ²éÑ¯Ä³¸öÓÃ»§µÄÎÄÕÂ
-	  * @param userName ÓÃ»§Î¨Ò»Æ¾Ö¤
+	  * æŸ¥è¯¢æŸä¸ªç”¨æˆ·çš„æ–‡ç« 
+	  * @param userName ç”¨æˆ·å”¯ä¸€å‡­è¯
 	  * @return Articles
 	  */
 	 public ArrayList<Article> findByName(String name){
@@ -590,7 +590,7 @@ public class ArticleDao {
 		 return list;
 	 }
 	 /**
-	  *  ËÑË÷·ÖÒ³²éÑ¯ÀàĞÍ
+	  *  æœç´¢åˆ†é¡µæŸ¥è¯¢ç±»å‹
 	  * @param type
 	  * @return
 	  */
@@ -633,7 +633,7 @@ public class ArticleDao {
 	 
 	 
 	 /**
-	  * ¸ù¾İÀàĞÍ²éÑ¯
+	  * æ ¹æ®ç±»å‹æŸ¥è¯¢
 	  * @param type
 	  * @return
 	  */
@@ -679,7 +679,7 @@ public class ArticleDao {
 		 return list;
 	 }
 	    /**
-	     * ²éÑ¯¾Ù±¨
+	     * æŸ¥è¯¢ä¸¾æŠ¥
 	     * @param type
 	     * @param OFFSET
 	     * @param limit
@@ -722,7 +722,7 @@ public class ArticleDao {
 			return list;
 		}
 		 /**
-		  * Í³¼ÆÒÑÉóºË
+		  * ç»Ÿè®¡å·²å®¡æ ¸
 		  * @return
 		  */
 		public int count(){
@@ -747,7 +747,7 @@ public class ArticleDao {
 			return 0;
 		}
 		 /**
-		  * ²éÑ¯ÒÑÉóºËÄ³¸öÀàĞÍµÄÊıÁ¿
+		  * æŸ¥è¯¢å·²å®¡æ ¸æŸä¸ªç±»å‹çš„æ•°é‡
 		  * @param type
 		  * @return
 		  */
@@ -773,7 +773,7 @@ public class ArticleDao {
 			return 0;
 		}
 		/**
-		 * ²éÑ¯Î´ÉóºËµÄÄ³¸öÀàĞÍÌù×ÓÊıÁ¿
+		 * æŸ¥è¯¢æœªå®¡æ ¸çš„æŸä¸ªç±»å‹è´´å­æ•°é‡
 		 * @param type
 		 * @return
 		 */
@@ -799,7 +799,7 @@ public class ArticleDao {
 			return 0;
 		}
 		  /**
-		   * ¸ù¾İÀàĞÍ²éÑ¯Î´ÉóºË
+		   * æ ¹æ®ç±»å‹æŸ¥è¯¢æœªå®¡æ ¸
 		   * @param type
 		   * @param OFFSET
 		   * @param limit
@@ -843,8 +843,8 @@ public class ArticleDao {
 			return list;
 		}
 		 /**
-		  * Í¨¹ıÉóºË
-		  * @param ID ÎÄÕÂID
+		  * é€šè¿‡å®¡æ ¸
+		  * @param ID æ–‡ç« ID
 		  * @return
 		  */
 		public boolean auditArticle(int id){

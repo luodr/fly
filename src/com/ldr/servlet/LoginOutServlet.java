@@ -1,4 +1,4 @@
-
+﻿
 
 package com.ldr.servlet;
 
@@ -28,7 +28,7 @@ public class LoginOutServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-           //�˳���¼
+           //ÍË³öµÇÂ¼
 		HttpSession session=req.getSession();
 		session.setAttribute("user", null);
 		resp.sendRedirect(req.getContextPath()+"/login");

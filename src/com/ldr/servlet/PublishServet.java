@@ -1,4 +1,4 @@
-package com.ldr.servlet;
+ï»¿package com.ldr.servlet;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -37,68 +37,68 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp)
   @Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-	  //ºËĞÄApi
+	  //æ ¸å¿ƒApi
       FileItemFactory factory = new DiskFileItemFactory();
       ServletFileUpload fileUpload = new ServletFileUpload(factory);
       
-      //ÅĞ¶ÏÊÇ·ñÊÇmuitipart/form-dataÀàĞÍ
+      //åˆ¤æ–­æ˜¯å¦æ˜¯muitipart/form-dataç±»å‹
       if(!ServletFileUpload.isMultipartContent(req)) {
-          resp.getWriter().println("±íµ¥µÄenctypeÊôĞÔ²»ÊÇmultipart/form-dataÀàĞÍ");
+          resp.getWriter().println("è¡¨å•çš„enctypeå±æ€§ä¸æ˜¯multipart/form-dataç±»å‹");
       }
-      //ÉèÖÃµ¥¸öÎÄ¼şÉÏ´«´óĞ¡ 5M
+      //è®¾ç½®å•ä¸ªæ–‡ä»¶ä¸Šä¼ å¤§å° 5M
       fileUpload.setFileSizeMax(5*1024*1024); 
-      //ÉèÖÃ×ÜÉÏ´«ÎÄ¼ş´óĞ¡(ÓĞÊ±ºòÒ»´ÎĞÔÉÏ´«¶à¸öÎÄ¼ş£¬ĞèÒªÓĞÒ»¸öÉÏÏŞ,´Ë´¦Îª10M)
+      //è®¾ç½®æ€»ä¸Šä¼ æ–‡ä»¶å¤§å°(æœ‰æ—¶å€™ä¸€æ¬¡æ€§ä¸Šä¼ å¤šä¸ªæ–‡ä»¶ï¼Œéœ€è¦æœ‰ä¸€ä¸ªä¸Šé™,æ­¤å¤„ä¸º10M)
       fileUpload.setSizeMax(10*1024*1024);
-      //ÉèÖÃÉÏ´«¼àÌıÆ÷[²ÎÊıÎª×Ô¶¨ÒåµÄ¼àÌıÆ÷]
+      //è®¾ç½®ä¸Šä¼ ç›‘å¬å™¨[å‚æ•°ä¸ºè‡ªå®šä¹‰çš„ç›‘å¬å™¨]
       fileUpload.setProgressListener(new ListenerUploadProgress());
       String realFileName =null;
       String path="./user/img";
       Map param = new HashMap();   
-      //½âÎöÇëÇó
+      //è§£æè¯·æ±‚
       try {
           List<FileItem> parseRequest = fileUpload.parseRequest(req);
-          //»ñÈ¡Êı¾İ
+          //è·å–æ•°æ®
           for (FileItem fileItem : parseRequest) {
-              //ÅĞ¶ÏÊı¾İÀàĞÍÊÇ²»ÊÇÆÕÍ¨µÄform±íµ¥×Ö¶Î
+              //åˆ¤æ–­æ•°æ®ç±»å‹æ˜¯ä¸æ˜¯æ™®é€šçš„formè¡¨å•å­—æ®µ
               if(!fileItem.isFormField()) {
-                  //ÉÏ´«ÎÄ¼ş
+                  //ä¸Šä¼ æ–‡ä»¶
                   String fileName = fileItem.getName();
                   InputStream fileStream = fileItem.getInputStream();
-                  //¶¨Òå±£´æµÄ¸¸Â·¾¶
+                  //å®šä¹‰ä¿å­˜çš„çˆ¶è·¯å¾„
                   String parentDir = this.getServletContext().getRealPath(path);
                
-                  //Ê¹ÓÃUUID+ÎÄ¼şÃûµÄ·½Ê½£¬±ÜÃâÎÄ¼şÖØÃû
+                  //ä½¿ç”¨UUID+æ–‡ä»¶åçš„æ–¹å¼ï¼Œé¿å…æ–‡ä»¶é‡å
                    realFileName = UUID.randomUUID().toString()+"-"+fileName;
-                  //´´½¨Òª±£´æµÄÎÄ¼ş
+                  //åˆ›å»ºè¦ä¿å­˜çš„æ–‡ä»¶
                   File file = new File(parentDir,realFileName);
-                  //ÅĞ¶ÏÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+                  //åˆ¤æ–­æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
                   if(!file.getParentFile().exists()) {
-                      //´´½¨ÎÄ¼ş¼Ğ[¶à¼¶ÎÄ¼ş¼Ğ]file.madirÊÇ´´½¨µ¥Ò»ÎÄ¼ş¼Ğ
+                      //åˆ›å»ºæ–‡ä»¶å¤¹[å¤šçº§æ–‡ä»¶å¤¹]file.madiræ˜¯åˆ›å»ºå•ä¸€æ–‡ä»¶å¤¹
                       file.getParentFile().mkdirs();
                   }
-                  //´´½¨Êä³öÁ÷
+                  //åˆ›å»ºè¾“å‡ºæµ
                   OutputStream out = new FileOutputStream(file);
-                  //´´½¨×Ö½Ú»º´æ
+                  //åˆ›å»ºå­—èŠ‚ç¼“å­˜
                   byte[] buffer = new byte[1024];
                   int len = -1;
-                  //Ò»´Î¶ÁÈ¡1kb(1024byte),·µ»Ø-1±íÃ÷¶ÁÈ¡Íê±Ï
+                  //ä¸€æ¬¡è¯»å–1kb(1024byte),è¿”å›-1è¡¨æ˜è¯»å–å®Œæ¯•
                   while((len = fileStream.read(buffer))!=-1) {
-                      //Ò»´ÎĞ´Èë1kb(1024byte)
+                      //ä¸€æ¬¡å†™å…¥1kb(1024byte)
                       out.write(buffer,0, len);
                   }
                  
-                  //³åË¢Á÷×ÊÔ´
+                  //å†²åˆ·æµèµ„æº
                   out.flush();
-                  //¹Ø±ÕÁ÷
+                  //å…³é—­æµ
                   out.close();
                   fileStream.close();
                   
               }else {
-                  //ÆÕÍ¨×Ö¶Î
+                  //æ™®é€šå­—æ®µ
                   
-                  //×Ö¶ÎÃû
+                  //å­—æ®µå
                   String fieldName = fileItem.getFieldName();
-                  //×Ö¶ÎÖµ
+                  //å­—æ®µå€¼
                   String fieldValue = fileItem.getString();
                   fieldValue=new String(fieldValue.getBytes("ISO-8859-1"),"UTF-8");
                   System.out.println(fieldName+":"+fieldValue);

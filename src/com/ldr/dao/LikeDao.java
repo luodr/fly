@@ -1,4 +1,4 @@
-package com.ldr.dao;
+锘縫ackage com.ldr.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -28,8 +28,8 @@ public class LikeDao {
 	    
 
 	/**
-	 * 关闭连接
-	 * @param con 需要关闭的连接
+	 * 鍏抽棴杩炴帴
+	 * @param con 闇�瑕佸叧闂殑杩炴帴
 	 */
 	public void closeConnection(Connection con){
 		try {
@@ -42,7 +42,7 @@ public class LikeDao {
 		}
 	}
   /**
-   *  点赞评论
+   *  鐐硅禐璇勮
    * @param collect
    * @return
    */
@@ -68,7 +68,7 @@ public class LikeDao {
 		return false;
     }    
 	/**
-	 * 获取用户在文章的点赞
+	 * 鑾峰彇鐢ㄦ埛鍦ㄦ枃绔犵殑鐐硅禐
 	 * @param user
 	 * @param ArticleID
 	 */

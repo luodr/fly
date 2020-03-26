@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -35,21 +35,21 @@ public class MailServlet extends HttpServlet {
 			{
 				MailSend send=new MailSend();
 				 String vcode="";
-	             //Ëæ»úÉú³É6Î»ÑéÖ¤Âë 
+	             //éšæœºç”Ÿæˆ6ä½éªŒè¯ç  
 	             for (int i = 0; i < 6; i++) {
 	                 vcode = vcode + (int)(Math.random() * 9);
 	             }
-				//·¢ËÍÓÊÏä
+				//å‘é€é‚®ç®±
 				   send.sendMail(mail,user.getName(),vcode);
 				  req.getSession().setAttribute("mailVcode", vcode);
 				  req.getSession().setAttribute("mail", mail);
 				  obj.put("code",0);
-	       	      obj.put("msg", "ÓÊÏäÑéÖ¤ÂëÒÑ·¢ËÍ");
+	       	      obj.put("msg", "é‚®ç®±éªŒè¯ç å·²å‘é€");
 				
 			}
 		} catch (Exception e) {
 			  obj.put("code",1);
-	       	   obj.put("msg", "ÓÊÏäÑéÖ¤Âë·¢ËÍÊ§°Ü");
+	       	   obj.put("msg", "é‚®ç®±éªŒè¯ç å‘é€å¤±è´¥");
 		}
 
 	      try {
@@ -73,21 +73,21 @@ public class MailServlet extends HttpServlet {
 				
 				if(UserDao.getInstance().updateUserMail(user.getUser(), mail)){
 					obj.put("code",0);
-		       	    obj.put("msg", "ÓÊÏäÑé°ó¶¨³É¹¦");
+		       	    obj.put("msg", "é‚®ç®±éªŒç»‘å®šæˆåŠŸ");
 		       	 user.setMail(mail); 
 				}else{
 					obj.put("code",1);
-		       	      obj.put("msg", "ÓÊÏäÑé°ó¶¨Ê§°ÜÇëÖØÊÔ");
+		       	      obj.put("msg", "é‚®ç®±éªŒç»‘å®šå¤±è´¥è¯·é‡è¯•");
 				}
 				 
 			}else{
 				 obj.put("code",1);
-		       	   obj.put("msg", "ÑéÖ¤Âë´íÎó");
+		       	   obj.put("msg", "éªŒè¯ç é”™è¯¯");
 			}
 		
 		}else{
 			 obj.put("code",1);
-	       	   obj.put("msg", "µÇÂ¼ÒÑ¹ıÆÚ");
+	       	   obj.put("msg", "ç™»å½•å·²è¿‡æœŸ");
 		}
 		 try {
 				resp.getWriter().println(obj.toJSONString());

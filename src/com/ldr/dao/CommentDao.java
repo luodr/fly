@@ -1,4 +1,4 @@
-package com.ldr.dao;
+ï»¿package com.ldr.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -32,8 +32,8 @@ public class CommentDao {
 	    
 
 	/**
-	 * ¹Ø±ÕÁ¬½Ó
-	 * @param con ĞèÒª¹Ø±ÕµÄÁ¬½Ó
+	 * å…³é—­è¿æ¥
+	 * @param con éœ€è¦å…³é—­çš„è¿æ¥
 	 */
 	public void closeConnection(Connection con){
 		try {
@@ -46,9 +46,9 @@ public class CommentDao {
 		}
 	}
 	/**
-	 *  ²åÈëÆÀÂÛ
+	 *  æ’å…¥è¯„è®º
 	 * @param article 
-	 * @return ²åÈëÊı¾İ¿â½á¹û
+	 * @return æ’å…¥æ•°æ®åº“ç»“æœ
 	 */
 	public  boolean insertComment(Comment  comment){
 		Connection con=ConnectManager.getConnection();
@@ -71,7 +71,7 @@ public class CommentDao {
 		return false;
     }    
 	/**
-	 *  ²éÑ¯ÎÄÕÂµÄÆÀÂÛ
+	 *  æŸ¥è¯¢æ–‡ç« çš„è¯„è®º
 	 * @param id
 	 * @return
 	 */
@@ -83,7 +83,7 @@ public class CommentDao {
 			String sql ="select comment.*,`user`.`name`,`user`.img from `comment` inner join  `user`  on comment.username=`user`.`user` WHERE `comment`.articleid=?";
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setInt(1, articleId);
-			System.out.println("²éÑ¯ÆÀÂÛÓï¾ä£º"+pst.toString());
+			System.out.println("æŸ¥è¯¢è¯„è®ºè¯­å¥ï¼š"+pst.toString());
 		     re=pst.executeQuery();
 		     while(re.next()){
 		   Comment comment=new Comment();
@@ -184,7 +184,7 @@ public class CommentDao {
 		  return list;	
 	}
 	/**
-	 * ²éÑ¯±ğÈË»Ø¸´ÎÒµÄĞÅÏ¢
+	 * æŸ¥è¯¢åˆ«äººå›å¤æˆ‘çš„ä¿¡æ¯
 	 * @param user
 	 * @param limit
 	 * @return
@@ -220,7 +220,7 @@ public class CommentDao {
 		  return list;	
 	}
 	/**
-	 * Çå¿ÕÎ´¶Á
+	 * æ¸…ç©ºæœªè¯»
 	 * @param user
 
 	 */
@@ -245,7 +245,7 @@ public class CommentDao {
 		
 	}
 	/**
-	 * É¾³ıÆÀÂÛ
+	 * åˆ é™¤è¯„è®º
 	 * @param id
 	 * @param username
 	 * @param articleid

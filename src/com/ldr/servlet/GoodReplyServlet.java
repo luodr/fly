@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -45,7 +45,7 @@ public class GoodReplyServlet extends HttpServlet {
 		
 		resp.setContentType("text/html; charset=UTF-8");
 		 JSONObject obj = new JSONObject();
-		 if(user!=null){//ÒÑ¾­µÇÂ¼
+		 if(user!=null){//å·²ç»ç™»å½•
 			 String articleID=req.getParameter("articleID");
 			 String commentID=req.getParameter("commentID");
 			
@@ -54,18 +54,18 @@ public class GoodReplyServlet extends HttpServlet {
 			 like.setCommentID(Integer.parseInt( new String(commentID.getBytes(CharacterCodingUtil.getEncoding(commentID)),"UTF-8")));
 			 like.setUser( new String(user.getUser().getBytes(CharacterCodingUtil.getEncoding(user.getUser())),"UTF-8"));
 	   if( LikeDao.getInstance().insertLike(like)){
-		   //Ìí¼ÓµãÔŞÊı
+		   //æ·»åŠ ç‚¹èµæ•°
 		   CommentDao.getInstance().addLike(Integer.parseInt(commentID));
 		   obj.put("status", 0);
-		   obj.put("msg", "µãÔŞ³É¹¦!");
+		   obj.put("msg", "ç‚¹èµæˆåŠŸ!");
 		 
 	   }else{
 		 obj.put("status", 1);
-	 	 obj.put("msg", "µãÔŞÊ§°Ü!ÄãÒÑ¾­µã¹ıÔŞÁË");
+	 	 obj.put("msg", "ç‚¹èµå¤±è´¥!ä½ å·²ç»ç‚¹è¿‡èµäº†");
   	}	
 		 }else{ 
 			 obj.put("status", 1);
-			 obj.put("msg", "µãÔŞÊ§°Ü!ÇëµÇÂ¼ÔÙÊÔ");
+			 obj.put("msg", "ç‚¹èµå¤±è´¥!è¯·ç™»å½•å†è¯•");
 		 }
 		 try {
 				resp.getWriter().println(obj.toJSONString());

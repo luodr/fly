@@ -1,19 +1,19 @@
-package com.ldr.bean;
+ï»¿package com.ldr.bean;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
 public class Comment {
 	private int id;
-	//ÓÃ»§Ãû
+	//ç”¨æˆ·å
 	private String username;
-	//ÓÊÏä
+	//é‚®ç®±
 	private String 	email;
 	private String  http;
 	private String  commentcontent;
 	private int  articleid;
 	private Timestamp creationdate;
-	//±»»Ø¸´Õßid
+	//è¢«å›å¤è€…id
 	private String  responderName;
 	private String responderemail;
 	private boolean read;

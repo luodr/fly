@@ -1,4 +1,4 @@
-
+﻿
 
 package com.ldr.servlet;
 
@@ -31,7 +31,7 @@ public class IndexServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String hot=req.getParameter("hot");
 		String page=req.getParameter("page");
-		if(page==null){//Ĭ�ϵ�һҳ
+		if(page==null){//Ä¬ÈÏµÚÒ»Ò³
 			page="1";
 		}
 		int size=10;

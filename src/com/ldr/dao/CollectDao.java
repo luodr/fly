@@ -1,4 +1,4 @@
-package com.ldr.dao;
+ï»¿package com.ldr.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,8 +37,8 @@ public class CollectDao {
 		return null;
 	}
 	/**
-	 * ¹Ø±ÕÁ¬½Ó
-	 * @param con ĞèÒª¹Ø±ÕµÄÁ¬½Ó
+	 * å…³é—­è¿æ¥
+	 * @param con éœ€è¦å…³é—­çš„è¿æ¥
 	 */
 	public void closeConnection(Connection con){
 		try {
@@ -51,7 +51,7 @@ public class CollectDao {
 		}
 	}
   /**
-   *  ÊÕ²ØÎÄÕÂ
+   *  æ”¶è—æ–‡ç« 
    * @param collect
    * @return
    */
@@ -86,9 +86,9 @@ public class CollectDao {
 		return false;
     }    
 	   /**
-	   * ²éÑ¯ÎÄÕÂ
-	   * @param itemID ÎÄÕÂid
-	   * @return  ÎÄÕÂËùÓĞĞÅÏ¢
+	   * æŸ¥è¯¢æ–‡ç« 
+	   * @param itemID æ–‡ç« id
+	   * @return  æ–‡ç« æ‰€æœ‰ä¿¡æ¯
 	   */
 		 public ArrayList<Collect> findByUser(String user){
 			 Connection con = null;

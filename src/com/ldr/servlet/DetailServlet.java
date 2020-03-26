@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -47,8 +47,8 @@ public class DetailServlet extends HttpServlet {
 			if(user!=null){
 			ArrayList<Integer> likeList=LikeDao.getInstance().findByUserAndArticle(user.getUser(), article.getId());
 			 req.setAttribute("likeList", likeList);
-			//Ã»Í¨¹ıÉóºË µ«²»ÊÇ¸ÃÓÃ»§µÄÌû×ÓÇÒ²»ÊÇ¹ÜÀíÔ± Ìøµ½404
-			 System.out.println("¹ÜÀíÔ±"+user.getType());
+			//æ²¡é€šè¿‡å®¡æ ¸ ä½†ä¸æ˜¯è¯¥ç”¨æˆ·çš„å¸–å­ä¸”ä¸æ˜¯ç®¡ç†å‘˜ è·³åˆ°404
+			 System.out.println("ç®¡ç†å‘˜"+user.getType());
 			 if(article.getAudit()==0&&(!user.getUser().equals(article.getUserName())&&user.getType()!=1)){
 				 req.getRequestDispatcher("./static/404.jsp").forward(req, resp);
 				 return ;
@@ -61,7 +61,7 @@ public class DetailServlet extends HttpServlet {
 		}else{
 			ArrayList<Integer> likeList=new ArrayList<Integer>();
 			 req.setAttribute("likeList", likeList);
-			 if(article.getAudit()==0){//Èç¹ûÓÃ»§Ã»µÇÂ¼ ÇÒÃ»Í¨¹ıÉóºË  Ìøµ½404
+			 if(article.getAudit()==0){//å¦‚æœç”¨æˆ·æ²¡ç™»å½• ä¸”æ²¡é€šè¿‡å®¡æ ¸  è·³åˆ°404
 				 req.getRequestDispatcher("./static/404.jsp").forward(req, resp);
 				 return ;
 			 }

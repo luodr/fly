@@ -1,4 +1,4 @@
-package com.ldr.util;
+﻿package com.ldr.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -21,7 +21,7 @@ public class ConnectManager {
 		try{
 			Properties pro = new Properties();
 	
-//			System.out.println(Thread.currentThread().getContextClassLoader().getResource("").getPath()+"database.properties"+"ɵ�ư�");
+//			System.out.println(Thread.currentThread().getContextClassLoader().getResource("").getPath()+"database.properties"+"Éµ±Æ°Ñ");
 //			FileInputStream in = new FileInputStream(Thread.currentThread().getContextClassLoader().getResource("").getPath()+"/database.properties");
 		
 //			pro.load(in);
@@ -42,7 +42,7 @@ public class ConnectManager {
 
 		}catch (Exception e) {
 			e.printStackTrace();
-			System.err.println("properties ����ʧ��");
+			System.err.println("properties ¼ÓÔØÊ§°Ü");
 		}
 	}
 	public  static Connection getConnection(){

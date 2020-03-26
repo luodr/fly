@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -25,7 +25,7 @@ import com.google.gson.JsonArray;
 import com.ldr.dao.*;
 import com.ldr.bean.*;
 import com.ldr.util.*;
-//get ÓÃÓÚ ÉóºË      postÓÃÓÚ²éÑ¯ÉóºËÎ´Í¨¹ıµÄ
+//get ç”¨äº å®¡æ ¸      postç”¨äºæŸ¥è¯¢å®¡æ ¸æœªé€šè¿‡çš„
 public class AuditServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -40,14 +40,14 @@ public class AuditServlet extends HttpServlet {
 		boolean b=	ArticleDao.getInstance().auditArticle(Integer.parseInt(articleId));
 		if(b){
 			 obj.put("code", 0);
-	    	 obj.put("msg", "ÉóºË³É¹¦");
+	    	 obj.put("msg", "å®¡æ ¸æˆåŠŸ");
 		}else{
 			 obj.put("code", 1);
-	    	 obj.put("msg", "ÉóºËÊ§°Ü,ÇëÖØÊÔ");
+	    	 obj.put("msg", "å®¡æ ¸å¤±è´¥,è¯·é‡è¯•");
 		}
 		} else{
 			 obj.put("code", 1);
-	    	 obj.put("msg", "ÉóºËÊ§°Ü,ÇëµÇÂ¼");
+	    	 obj.put("msg", "å®¡æ ¸å¤±è´¥,è¯·ç™»å½•");
 		}
 		    		
 		try {

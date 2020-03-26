@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -46,18 +46,18 @@ public class DeleteServlet extends HttpServlet {
 		  JSONObject obj = new JSONObject();
 	   if(user!=null){
 		   
-		   if(user.getType()==1){//Èç¹ûÊÇ¹ÜÀíÔ±¿ÉÒÔÖ±½ÓÉ¾³ı
+		   if(user.getType()==1){//å¦‚æœæ˜¯ç®¡ç†å‘˜å¯ä»¥ç›´æ¥åˆ é™¤
 			   ArticleDao.getInstance().deleteArticle(Integer.parseInt(delete));
 				  
 			    obj.put("code", 0);
-			    obj.put("msg", "É¾³ı³É¹¦");
-		   }else{//Èç¹û²»ÊÇ¹ÜÀíÔ± ÒªÑéÖ¤ÊÇ·ñÊÇ×÷Õß½øĞĞÉ¾³ı
+			    obj.put("msg", "åˆ é™¤æˆåŠŸ");
+		   }else{//å¦‚æœä¸æ˜¯ç®¡ç†å‘˜ è¦éªŒè¯æ˜¯å¦æ˜¯ä½œè€…è¿›è¡Œåˆ é™¤
 			Article article= ArticleDao.getInstance().findByID(Integer.parseInt(delete));
 			   if(article.getUserName().equals(user.getUser())){
 				   ArticleDao.getInstance().deleteArticle(Integer.parseInt(delete));
 					  
 				    obj.put("code", 0);
-				    obj.put("msg", "É¾³ı³É¹¦");
+				    obj.put("msg", "åˆ é™¤æˆåŠŸ");
 			   }
 		   }
 		    try {

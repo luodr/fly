@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -29,10 +29,10 @@ public class AddArticleServlet extends HttpServlet {
           
 		HttpSession session=req.getSession();
 		User user=(User)session.getAttribute("user");
-		 if(user!=null){//ÒÑ¾­µÇÂ¼
+		 if(user!=null){//å·²ç»ç™»å½•
 			
               req.getRequestDispatcher("./static/jie/add.jsp").forward(req, resp);
-		 }else{ //Ã»µÇÂ¼
+		 }else{ //æ²¡ç™»å½•
 			 resp.sendRedirect(req.getContextPath()+"/login");
 		 }
 		
@@ -47,7 +47,7 @@ public class AddArticleServlet extends HttpServlet {
 		resp.setContentType("text/html; charset=UTF-8");
 		HttpSession session=req.getSession();
 		User user=(User)session.getAttribute("user");
-		 if(user!=null){//ÒÑ¾­µÇÂ¼
+		 if(user!=null){//å·²ç»ç™»å½•
 			String type=req.getParameter("class");
 			String title=req.getParameter("title");
 			String project=req.getParameter("project");
@@ -67,7 +67,7 @@ public class AddArticleServlet extends HttpServlet {
 			int itemId= ArticleDao.getInstance().insertArticle(article);
 			 JSONObject obj = new JSONObject();
 			    obj.put("code",0 );
-				obj.put("msg", "·¢²¼³É¹¦!");
+				obj.put("msg", "å‘å¸ƒæˆåŠŸ!");
 				obj.put("itemId", itemId);
 				
 				try {
@@ -76,7 +76,7 @@ public class AddArticleServlet extends HttpServlet {
 					e.printStackTrace();
 				}
 		
-		 }else{ //Ã»µÇÂ¼
+		 }else{ //æ²¡ç™»å½•
 			 try {
 				resp.sendRedirect(req.getContextPath()+"/login");
 			} catch (IOException e) {

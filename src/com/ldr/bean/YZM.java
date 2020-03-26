@@ -1,4 +1,4 @@
-package com.ldr.bean;
+﻿package com.ldr.bean;
 
 public class YZM {
 	String Message;

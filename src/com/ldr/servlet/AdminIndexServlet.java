@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -29,16 +29,16 @@ public class AdminIndexServlet extends HttpServlet {
           
 		HttpSession session=req.getSession();
 		User user=(User)session.getAttribute("user");
-		 if(user!=null){//ÒÑ¾­µÇÂ¼
+		 if(user!=null){//å·²ç»ç™»å½•
 			
             
-              if(user.getType()==1){ //ÊÇ¹ÜÀíÔ±
+              if(user.getType()==1){ //æ˜¯ç®¡ç†å‘˜
             	  req.getRequestDispatcher("./static/admin/index.jsp").forward(req, resp);
-  			}else{ //²»ÊÇ¹ÜÀíÔ±
+  			}else{ //ä¸æ˜¯ç®¡ç†å‘˜
   			
   				resp.sendRedirect(req.getContextPath()+"/index");
   			}
-		 }else{ //Ã»µÇÂ¼
+		 }else{ //æ²¡ç™»å½•
 			 resp.sendRedirect(req.getContextPath()+"/login");
 		 }
 		

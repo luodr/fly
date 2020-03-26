@@ -1,4 +1,4 @@
-package com.ldr.servlet;
+ï»¿package com.ldr.servlet;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -61,23 +61,23 @@ if(userName!=null&&password!=null&type!=null){
 	if(yzm==null||!yzm.equals(session.getAttribute("yzm")))
 	{
 		 obj.put("code", 1);
-    	 obj.put("msg", "ÑéÖ¤ÂëÓĞÎó");
+    	 obj.put("msg", "éªŒè¯ç æœ‰è¯¯");
 	}else
 	 if(userName.getBytes().length != userName.length()){
 		 obj.put("code", 1);
-    	 obj.put("msg", "ÕËºÅ²»ÄÜ°üº¬ÌØÊâ×Ö·ûºÍÖĞÎÄ");
+    	 obj.put("msg", "è´¦å·ä¸èƒ½åŒ…å«ç‰¹æ®Šå­—ç¬¦å’Œä¸­æ–‡");
 	 }else
-	  //êÇ³ÆÊÇÎ¨Ò»µÄ
+	  //æ˜µç§°æ˜¯å”¯ä¸€çš„
     if(!UserDao.getInstance().verifyName(name)){
     	 obj.put("code", 1);
-    	 obj.put("msg", "êÇ³ÆÒÑ´æÔÚ£¬Çë»»Ò»¸ö!");
+    	 obj.put("msg", "æ˜µç§°å·²å­˜åœ¨ï¼Œè¯·æ¢ä¸€ä¸ª!");
     }else
 	if(userName.trim().equals(session.getAttribute("PhoneNumbers"))&&UserDao.getInstance().registUser(user)){
 		 obj.put("code", 0);
-    	 obj.put("msg", "×¢²á³É¹¦,È¥µÇÂ½°É!");
+    	 obj.put("msg", "æ³¨å†ŒæˆåŠŸ,å»ç™»é™†å§!");
 	}else{
 		 obj.put("code", 1);
-    	 obj.put("msg", "ÊÖ»úºÅÒÑ±»×¢²á!");
+    	 obj.put("msg", "æ‰‹æœºå·å·²è¢«æ³¨å†Œ!");
 	}
 	try {
 		resp.getWriter().println(obj.toJSONString());

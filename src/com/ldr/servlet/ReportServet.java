@@ -1,4 +1,4 @@
-package com.ldr.servlet;
+ï»¿package com.ldr.servlet;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -54,15 +54,15 @@ String articleId=req.getParameter("articleId");
 	 if(  ReportDao.getInstance().insertReport(report)){
 		 ArticleDao.getInstance().addReport(Integer.parseInt(articleId));
 		 obj.put("code", 0);
-			obj.put("msg", "¾Ù±¨³É¹¦!");
+			obj.put("msg", "ä¸¾æŠ¥æˆåŠŸ!");
 	 }else{
 		 obj.put("code", 1);
-	    obj.put("msg", "¾Ù±¨Ê§°Ü£¡ÄãÒÑ¾­¾Ù±¨¹ı¸ÃÌû×Ó!");
+	    obj.put("msg", "ä¸¾æŠ¥å¤±è´¥ï¼ä½ å·²ç»ä¸¾æŠ¥è¿‡è¯¥å¸–å­!");
 	 }
 		
 	 }else{
 		   obj.put("code", 1);
-		    obj.put("msg", "¾Ù±¨Ê§°Ü£¡ÇëÏÈµÇÂ¼!");
+		    obj.put("msg", "ä¸¾æŠ¥å¤±è´¥ï¼è¯·å…ˆç™»å½•!");
 		 
 	 }
 	try {

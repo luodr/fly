@@ -1,4 +1,4 @@
-package com.ldr.dao;
+ï»¿package com.ldr.dao;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -37,10 +37,10 @@ public class UserDao {
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1,user.getUser());
 			rs = pst.executeQuery();
-		      //ÒÑ±»×¢²á
+		      //å·²è¢«æ³¨å†Œ
 			if(rs.next()){
 				return false;
-			}else{ //×¢²á
+			}else{ //æ³¨å†Œ
 				sql ="insert into user(user,password,type,name,regTime) values(?,?,?,?,?)";
 				pst = con.prepareStatement(sql);
 				pst.setString(1,user.getUser());
@@ -103,7 +103,7 @@ public boolean verifyUser(String user){
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1,user);		
 			rs = pst.executeQuery();
-		      //ÒÑ±»×¢²á
+		      //å·²è¢«æ³¨å†Œ
 			while (rs.next()){
 				User u=new User();
 			
@@ -139,7 +139,7 @@ public boolean verifyUser(String user){
 			PreparedStatement pst = con.prepareStatement(sql);
 			pst.setString(1,name);		
 			rs = pst.executeQuery();
-		      //ÒÑ±»×¢²á
+		      //å·²è¢«æ³¨å†Œ
 			while (rs.next()){
 				User u=new User();
 			
@@ -187,7 +187,7 @@ public boolean verifyUser(String user){
 		return null;
 	}
 	/**
-	 * ¸üĞÂÍ·Ïñ
+	 * æ›´æ–°å¤´åƒ
 	 * @param user
 	 * @param path
 	 * @return
@@ -213,7 +213,7 @@ public boolean verifyUser(String user){
 	
 	
 	/**
-	 * ¸üĞÂÓÊÏä
+	 * æ›´æ–°é‚®ç®±
 	 * @param user
 	 * @param mail
 	 * @return

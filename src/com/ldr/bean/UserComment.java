@@ -1,11 +1,11 @@
-package com.ldr.bean;
+锘縫ackage com.ldr.bean;
 
 import java.sql.Date;
 import java.sql.Timestamp;
 
 public class UserComment {
 	private int id;
-	//用户名
+	//脫脙禄搂脙没
 	private String username;
 	private String commentcontent;
 	

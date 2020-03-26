@@ -1,4 +1,4 @@
-package com.ldr.servlet;
+ï»¿package com.ldr.servlet;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -42,17 +42,17 @@ public class LoginServet extends HttpServlet {
 		String password = req.getParameter("password");
 		User user = UserDao.getInstance().findByUser(userName);
 		if(user!=null&&user.getPassword().equals(password.trim())){
-			//µÇÂ¼³É¹¦!
+			//ç™»å½•æˆåŠŸ!
 			HttpSession session=req.getSession();
 			session.setAttribute("user", user);
-			if(user.getType()==1){ //¹ÜÀíÔ±µÇÂ¼  ÏÈÌøµ½ºóÌ¨Ê×Ò³
+			if(user.getType()==1){ //ç®¡ç†å‘˜ç™»å½•  å…ˆè·³åˆ°åå°é¦–é¡µ
 				resp.sendRedirect(req.getContextPath()+"/adminIndex");
 			}else{
 			
 				resp.sendRedirect(req.getContextPath()+"/index");
 			}
 		
-		}else{//µÇÂ¼Ê§°Ü!
+		}else{//ç™»å½•å¤±è´¥!
 			req.getRequestDispatcher("/static/login.jsp").forward(req, resp);
 		}
 

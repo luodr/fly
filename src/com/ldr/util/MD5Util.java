@@ -1,4 +1,4 @@
-package com.ldr.util;
+ï»¿package com.ldr.util;
 
 
  
@@ -12,10 +12,10 @@ public class MD5Util {
     private static final String slat = "&%1A2Asc*&%$$#@";
 
     /**
-     * Ô­ÉúµÄ¼ÓÃÜ·½·¨
+     * åŸç”Ÿçš„åŠ å¯†æ–¹æ³•
      *
-     * @param value ĞèÒª¼ÓÃÜµÄ×Ö·û´®
-     * @return ¼ÓÃÜºóµÄ×Ö·û´®
+     * @param value éœ€è¦åŠ å¯†çš„å­—ç¬¦ä¸²
+     * @return åŠ å¯†åçš„å­—ç¬¦ä¸²
      */
     public static String md5(String value) {
         try {

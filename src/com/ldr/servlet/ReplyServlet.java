@@ -1,4 +1,4 @@
-
+ï»¿
 
 package com.ldr.servlet;
 
@@ -43,7 +43,7 @@ public class ReplyServlet extends HttpServlet {
 		HttpSession session=req.getSession();
 		User user=(User)session.getAttribute("user");
 		 JSONObject obj = new JSONObject();
-		 if(user!=null){//ÒÑ¾­µÇÂ¼
+		 if(user!=null){//å·²ç»ç™»å½•
 			 String articleId=req.getParameter("articleId");
 		     String responderName=req.getParameter("responderName");
 		     String content=req.getParameter("content");
@@ -67,17 +67,17 @@ public class ReplyServlet extends HttpServlet {
 			     comment.setUsername(user.getUser());
 			     CommentDao.getInstance().insertComment(comment);
 			        obj.put("code", 0);
-					obj.put("msg", "ÆÀÂÛ³É¹¦!");
+					obj.put("msg", "è¯„è®ºæˆåŠŸ!");
 		     }
 		  
 		     else{
 		         obj.put("code", 1);
-		    	 obj.put("msg", "ÆÀÂÛÊ§°Ü!");
+		    	 obj.put("msg", "è¯„è®ºå¤±è´¥!");
 		     }
             
-		 }else{ //Ã»µÇÂ¼
+		 }else{ //æ²¡ç™»å½•
 		      obj.put("code", 1);
-				obj.put("msg", "ÇëÏÈµÇÂ¼!!");
+				obj.put("msg", "è¯·å…ˆç™»å½•!!");
 		 }
 			try {
 				resp.getWriter().println(obj.toJSONString());

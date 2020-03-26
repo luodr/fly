@@ -1,9 +1,9 @@
-package com.ldr.util;
+ï»¿package com.ldr.util;
 
 import java.io.UnsupportedEncodingException;
 
 /**
- * ÅĞ¶Ï×Ö·û±àÂë
+ * åˆ¤æ–­å­—ç¬¦ç¼–ç 
  *
  * @author guyinyihun
  */
@@ -13,7 +13,7 @@ public class CharacterCodingUtil {
     private final static String ENCODE = "GBK";
  
     /**
-     * ÅĞ¶ÏÊÇ·ñÎªISO-8859-1
+     * åˆ¤æ–­æ˜¯å¦ä¸ºISO-8859-1
      *
      * @return
      */
@@ -23,7 +23,7 @@ public class CharacterCodingUtil {
     }
  
     /**
-     * ÅĞ¶ÏÊÇ·ñÎªUTF-8
+     * åˆ¤æ–­æ˜¯å¦ä¸ºUTF-8
      *
      * @return
      */
@@ -44,7 +44,7 @@ public class CharacterCodingUtil {
      * Title: getEncoding
      * </p>
      * <p>
-     * Description: ÅĞ¶Ï×Ö·û±àÂë
+     * Description: åˆ¤æ–­å­—ç¬¦ç¼–ç 
      * </p>
      *
      * @param str
@@ -91,7 +91,7 @@ public class CharacterCodingUtil {
      * Title: isoToutf8
      * </p>
      * <p>
-     * Description: ISO-8859-1 ±àÂë ×ª UTF-8
+     * Description: ISO-8859-1 ç¼–ç  è½¬ UTF-8
      * </p>
      *
      * @param str
@@ -111,7 +111,7 @@ public class CharacterCodingUtil {
      * Title: utf8Toiso
      * </p>
      * <p>
-     * Description: UTF-8 ±àÂë ×ª ISO-8859-1
+     * Description: UTF-8 ç¼–ç  è½¬ ISO-8859-1
      * </p>
      *
      * @param str
@@ -128,16 +128,16 @@ public class CharacterCodingUtil {
  
     /**
      * <p>Title: unicodeToCn</p>
-     * <p>Description: unicode ×ª ÖĞÎÄ</p>
+     * <p>Description: unicode è½¬ ä¸­æ–‡</p>
      *
      * @param unicode
      * @return
      */
     public static String unicodeToCn(String unicode) {
-        /** ÒÔ \ u ·Ö¸î£¬ÒòÎªjava×¢ÊÍÒ²ÄÜÊ¶±ğunicode£¬Òò´ËÖĞ¼ä¼ÓÁËÒ»¸ö¿Õ¸ñ */
+        /** ä»¥ \ u åˆ†å‰²ï¼Œå› ä¸ºjavaæ³¨é‡Šä¹Ÿèƒ½è¯†åˆ«unicodeï¼Œå› æ­¤ä¸­é—´åŠ äº†ä¸€ä¸ªç©ºæ ¼ */
         String[] strs = unicode.split("\\\\u");
         String returnStr = "";
-        // ÓÉÓÚunicode×Ö·û´®ÒÔ \ u ¿ªÍ·£¬Òò´Ë·Ö¸î³öµÄµÚÒ»¸ö×Ö·ûÊÇ""¡£
+        // ç”±äºunicodeå­—ç¬¦ä¸²ä»¥ \ u å¼€å¤´ï¼Œå› æ­¤åˆ†å‰²å‡ºçš„ç¬¬ä¸€ä¸ªå­—ç¬¦æ˜¯""ã€‚
         for (int i = 1; i < strs.length; i++) {
             returnStr += (char) Integer.valueOf(strs[i], 16).intValue();
         }
@@ -147,7 +147,7 @@ public class CharacterCodingUtil {
  
     /**
      * <p>Title: cnToUnicode</p>
-     * <p>Description: ÖĞÎÄ×ª unicode</p>
+     * <p>Description: ä¸­æ–‡è½¬ unicode</p>
      *
      * @param cn
      * @return
@@ -162,11 +162,11 @@ public class CharacterCodingUtil {
     }
  
     /**
-     * URL ½âÂë
+     * URL è§£ç 
      *
      * @return String
      * @author lifq
-     * @date 2015-3-17 ÏÂÎç04:09:51
+     * @date 2015-3-17 ä¸‹åˆ04:09:51
      */
     public static String getURLDecoderString(String str) {
         String result = "";
@@ -182,11 +182,11 @@ public class CharacterCodingUtil {
     }
  
     /**
-     * URL ×ªÂë
+     * URL è½¬ç 
      *
      * @return String
      * @author lifq
-     * @date 2015-3-17 ÏÂÎç04:10:28
+     * @date 2015-3-17 ä¸‹åˆ04:10:28
      */
     public static String getURLEncoderString(String str) {
         String result = "";
